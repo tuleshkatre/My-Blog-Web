@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-**n79&+a=wv()v=1yju80r3b#-t%5976#gt!!cfizse-@cs$=i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -78,8 +79,12 @@ WSGI_APPLICATION = 'iCoder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sample',
+        'USER': 'root',
+        'PASSWORD': 'Tulesh123@',
+        'HOST':'127.0.0.1',
+        'PORT':'3306',
     }
 }
 
