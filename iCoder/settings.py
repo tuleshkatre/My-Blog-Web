@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-**n79&+a=wv()v=1yju80r3b#-t%5976#gt!!cfizse-@cs$=i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -78,14 +78,14 @@ WSGI_APPLICATION = 'iCoder.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sample',
-        'USER': 'root',
-        'PASSWORD': 'Tulesh123@',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'hog',
+       'USER': 'postgres',
+       'PASSWORD': 'Tulesh123@',
+       'HOST': 'localhost',
+       'PORT': '5432',
+   }
 }
 
 
@@ -124,10 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static'),
-]
+STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
@@ -138,6 +136,4 @@ MESSAGE_TAGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# This is static work
-STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static')
+
